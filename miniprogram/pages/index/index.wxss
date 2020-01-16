@@ -73,16 +73,16 @@
 .pie{
   width: 50px;
   height: 50px;
-  /* border-radius: 50%; */
+  border-radius: 50%;
   background: yellowgreen;
   background-image: linear-gradient(to right,transparent 0%,#655 0);
 }
 @keyframes spin {
   to {transform: rotate(1turn);}
 }
-/* @keyframes bg {
+@keyframes bg {
   50% {background: #655;}
-} */
+}
 .pie::before{
   content: '';
   display: block;
