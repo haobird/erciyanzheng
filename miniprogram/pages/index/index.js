@@ -8,13 +8,22 @@ Page({
     openid: "",
     logged: false,
     takeSession: false,
+    rotate: 0,
     length: "", // 倒计时长度
     num: 0, // 定时器刷新次数
-    timer: ''     //存储计时器
+    timer: '',     //存储计时器
+    // 组件所需的参数
+    nvabarData: {
+      showCapsule: 1, //是否显示左上角图标   1表示显示    0表示不显示
+      title: '我的主页', //导航栏 中间的标题
+    },
+
+    // 此页面 页面内容距最顶部的距离
+    height: app.globalData.height * 2 + 20   
   },
   onLoad: function() {
-    var str = "otpauth://totp/handsome@totp.js?issuer=Totp.js&secret=GAXDC4DIG5YWYMTH";
-    this.decon(str);
+    // var str = "otpauth://totp/handsome@totp.js?issuer=Totp.js&secret=GAXDC4DIG5YWYMTH";
+    // this.decon(str);
     // 读取列表
     this.getList();
     // 执行定时器（时间同步到整秒再处理）
@@ -23,6 +32,9 @@ Page({
   },
   // 流程处理功能
   startInterval:function() {
+    var ttl1 = Math.floor(Date.now() / 1000 % 30);
+    var rotate = 360 * (30 - ttl1) / 30;
+    this.setData({rotate: rotate})
     setInterval(() => {
       var ttl = Math.floor(Date.now() / 1000 % 30);
       var length = 30 - ttl;
@@ -72,6 +84,25 @@ Page({
       }
     })
   },
+  // 删除
+  del : function(e) {
+    var that = this;
+    console.log(e)
+    var index = parseInt(e.currentTarget.dataset.index)
+    console.log(index)
+    wx.showModal({
+      title: '提示',
+      content: '是否删除该项',
+      success (res) {
+        if (res.confirm) {
+          console.log('用户点击确定')
+          that.delItem(index);
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
+  },
   // 新增用户条目
   addItem: function(obj){
     const db = wx.cloud.database()
@@ -97,12 +128,7 @@ Page({
   },
 
   // 删除用户条目
-  delItem: function(e) {
-    var that = this;
-    console.log(e)
-    var index = parseInt(e.currentTarget.dataset.index)
-    
-    console.log(index)
+  delItem: function(index) {
     var item = this.data.list[index];
     var id = item._id;
     if (!id) {

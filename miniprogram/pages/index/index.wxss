@@ -13,7 +13,7 @@
 }
 .list{
   width:100%;
-  min-height: calc(100vh - 60px);
+  min-height: calc(100vh - 76px);
 }
 .list li{
   padding:10px;
@@ -50,9 +50,47 @@
   font-family: Open Sans, "Helvetica Neue", Helvetica, Tahoma, Arial, "PingFang SC", "Microsoft YaHei";
 }
 .footer{
-  line-height: 60px;
+  height: 76px;
+  color:#8AA5BB;
+  text-align: center;
+  display: block;
+}
+
+.footer .mini{
+  width: auto;
+  line-height: 40px;
+  font-size: 16px;
+}
+
+.footer .sign{
+  line-height: 20px;
   font-size: 12px;
   color:#8AA5BB;
   text-align: center;
   display: block;
+}
+
+.pie{
+  width: 50px;
+  height: 50px;
+  /* border-radius: 50%; */
+  background: yellowgreen;
+  background-image: linear-gradient(to right,transparent 0%,#655 0);
+}
+@keyframes spin {
+  to {transform: rotate(1turn);}
+}
+/* @keyframes bg {
+  50% {background: #655;}
+} */
+.pie::before{
+  content: '';
+  display: block;
+  margin-left: 50%;
+  height: 100%;
+  border-radius: 0 100% 100% 0 / 50%;
+  background-color: inherit;
+  transform-origin: left;
+  animation: spin 30s linear;
+
 }

@@ -1,26 +1,24 @@
 <!--index.wxml-->
-<view class="container">
-
+<!-- 以下是对一个自定义组件的引用 -->
+<!-- <component-tag-name inner-text="Some text"></component-tag-name> -->
+<view class="container" >
   <ul class="list">
     <li wx:for="{{list}}" wx:key="unique" 
-    bindtap="delItem" data-index='{{index}}'>
-
+    bindtap="del" data-index='{{index}}'>
       <b>{{item.sign}}</b>
         <p>
           <span>{{item.name}}</span>
           <span> {{item.website }}</span>
-          <small>{{ length }}</small>
+          <small >{{ length }}</small>
+          <!-- <div ></div> -->
         </p>
-        
-   
     </li>
   </ul>  
 
-  <!-- 操作数据库 -->
-  <!-- <view >
-    <button class="next" size="mini" type="default" bindtap="scan">add</button>
-  </view> -->
-  <view >
-    <text class="footer" >底部@文字</text>
-  </view>
+  <!-- 新增 -->
 </view>
+<view class="footer" >
+  <button class="next" class="mini" type="default" bindtap="scan">扫码新增</button>
+  <text class="sign">荒烟残照，辗转流光</text>
+</view>
+
