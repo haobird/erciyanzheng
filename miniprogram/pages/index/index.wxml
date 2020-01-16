@@ -1,0 +1,26 @@
+<!--index.wxml-->
+<view class="container">
+
+  <ul class="list">
+    <li wx:for="{{list}}" wx:key="unique" 
+    bindtap="delItem" data-index='{{index}}'>
+
+      <b>{{item.sign}}</b>
+        <p>
+          <span>{{item.name}}</span>
+          <span> {{item.website }}</span>
+          <small>{{ length }}</small>
+        </p>
+        
+   
+    </li>
+  </ul>  
+
+  <!-- 操作数据库 -->
+  <!-- <view >
+    <button class="next" size="mini" type="default" bindtap="scan">add</button>
+  </view> -->
+  <view >
+    <text class="footer" >底部@文字</text>
+  </view>
+</view>

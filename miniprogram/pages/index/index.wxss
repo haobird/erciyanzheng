@@ -1,0 +1,58 @@
+/**index.wxss**/
+
+/* page {
+  background: #f6f6f6;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+} */
+.container{
+  display: flex;
+  flex-direction: column;
+  box-sizing:border-box;
+}
+.list{
+  width:100%;
+  min-height: calc(100vh - 60px);
+}
+.list li{
+  padding:10px;
+  height:100px;
+  width:100%;
+  display:block;
+  background:#FFF;
+  border-bottom:1px solid rgba(138,165,187,0.5);
+}
+.list b{
+  font-size:32px;
+  color: #1890ff;
+  padding-top:25px;
+  display: block;
+  font-family: Open Sans, "Helvetica Neue", Helvetica, Tahoma, Arial, "PingFang SC", "Microsoft YaHei";
+  font-weight: normal;
+}
+.list p{
+  line-height: 24px;
+}
+.list span:first-child{
+  font-size:14px;
+  color:rgba(0,0,0,0.8);
+}
+.list span{
+  font-size:12px;
+  color:#8AA5BB;
+}
+.list  small{
+  font-size:12px;
+  float: right;
+  margin-right:20px;
+  color:#8AA5BB;
+  font-family: Open Sans, "Helvetica Neue", Helvetica, Tahoma, Arial, "PingFang SC", "Microsoft YaHei";
+}
+.footer{
+  line-height: 60px;
+  font-size: 12px;
+  color:#8AA5BB;
+  text-align: center;
+  display: block;
+}
