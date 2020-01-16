@@ -164,6 +164,12 @@ Page({
     var reg = /^otpauth:\/\/totp\/(.*)\?issuer=(.+)&secret=(\w+)/g;
     var myArray = reg.exec(str);
     console.log(myArray);
+    if (!myArray) {
+      wx.showToast({
+        icon: 'none',
+        title: '扫码错误',
+      })
+    }
     return {
       name: myArray[1],
       website: myArray[2],

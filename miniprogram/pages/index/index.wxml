@@ -15,10 +15,11 @@
     </li>
   </ul>  
 
+  <div class="footer" >
+    <button class="next" class="mini" type="default" bindtap="scan">扫码新增</button>
+    <text class="sign">荒烟残照 辗转流光</text>
+  </div>
   <!-- 新增 -->
 </view>
-<view class="footer" >
-  <button class="next" class="mini" type="default" bindtap="scan">扫码新增</button>
-  <text class="sign">荒烟残照，辗转流光</text>
-</view>
+
 
