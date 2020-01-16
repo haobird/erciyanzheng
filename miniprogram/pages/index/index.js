@@ -75,12 +75,13 @@ Page({
   scan: function() {
     var that = this;
     wx.scanCode({
-      onlyFromCamera: true,
+      // onlyFromCamera: true,
       success (res) {
         console.log(res)
         var str = res.result;
         var obj = that.decon(str);
-        that.addItem(obj);
+        if (obj) { that.addItem(obj); }
+        
       }
     })
   },
@@ -169,6 +170,7 @@ Page({
         icon: 'none',
         title: '扫码错误',
       })
+      return null;
     }
     return {
       name: myArray[1],
