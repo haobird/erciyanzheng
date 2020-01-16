@@ -17,7 +17,7 @@
 }
 .list li{
   padding:10px;
-  height:100px;
+  height:60px;
   width:100%;
   display:block;
   background:#FFF;
@@ -26,7 +26,7 @@
 .list b{
   font-size:32px;
   color: #1890ff;
-  padding-top:25px;
+  /* padding-top:25px; */
   display: block;
   font-family: Open Sans, "Helvetica Neue", Helvetica, Tahoma, Arial, "PingFang SC", "Microsoft YaHei";
   font-weight: normal;
