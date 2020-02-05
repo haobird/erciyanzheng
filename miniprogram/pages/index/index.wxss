@@ -52,13 +52,21 @@
   font-size: 32rpx;
 }
 
+.cover {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+
+  display: block;
+}
+
 .bac_top{
   background: #5b5b5e;
   height: 80px;
   width: 40%;
   margin-left: 10px;
   position: relative;
- 
+  display: block;
 }
 
 .bac_top::before{

@@ -15,14 +15,15 @@
       <text>二次验证码</text>
     </view>
   </view>
-  <view class='navbar_bar bac_top' hidden="{{ !showCapsule }}" >
+</view>
+<view class='cover' hidden="{{ !showCapsule }}" >
+  <div class="bac_top">
     <div class="background_bg">
         <p bindtap='scanClick'><span class="iconfont icon-scanning left_pad"  ></span>扫一扫</p>
         <p bindtap='editorClick' ><span class="iconfont icon-editor left_pad" ></span>手动添加</p>
     </div>
-  </view>
+  </div>
 </view>
-
 <view class="container" >
   <view wx:if="{{ showForm }}"> 
     <form class="form" bindsubmit="formSubmit" bindreset="formReset">

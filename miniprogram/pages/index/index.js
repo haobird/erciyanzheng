@@ -119,7 +119,9 @@ Page({
     // 查询当前用户所有的 counters
     db.collection('secretkeys').where({}).get({
       success: res => {
-        this.refreshCode(res.data);
+        if (res.data.length) {
+          this.refreshCode(res.data);
+        }
         console.log('[数据库] [查询记录] 成功: ', res)
       },
       fail: err => {

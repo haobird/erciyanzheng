@@ -1,6 +1,5 @@
 {
   "navigationStyle":"custom",
   "usingComponents": {
-    "header":"../../components/navbar/navbar"
   }
 }
