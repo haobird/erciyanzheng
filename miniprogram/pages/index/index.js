@@ -3,7 +3,6 @@ var TOTP = require('totp.min.js')
 const app = getApp()
 
 Page({
-  
   data: {
     nvabarData: {      
       showCapsule: false, //是否显示左上角图标   1表示显示    0表示不显示      
@@ -21,22 +20,12 @@ Page({
     length: "", // 倒计时长度
     num: 0, // 定时器刷新次数
     timer: '',     //存储计时器
-    // 此页面 页面内容距最顶部的距离
-    height: app.globalData.height * 2 + 20   
   },
   onLoad: function() {
-    var self = this;
-    wx.getSystemInfo({
-      success(res) {
-        var isIos = res.system.indexOf('iOS') > -1;
-        self.setData({
-          statusHeight: res.statusBarHeight,
-          navHeight: isIos ? 44 : 48
-        })
-      }
+    this.setData({
+      statusHeight: app.globalData.statusHeight,
+      navHeight : app.globalData.navHeight
     })
-    // var str = "otpauth://totp/handsome@totp.js?issuer=Totp.js&secret=GAXDC4DIG5YWYMTH";
-    // this.decon(str);
     // 读取列表
     this.getList();
     // 执行定时器（时间同步到整秒再处理）

@@ -1,7 +1,6 @@
 <!--index.wxml-->
 <!-- <header header='{{header}}'></header> -->
 <view class="html" bindtap="bindViewTap">
-<view style="height:{{statusHeight+navHeight}}px" hidden='{{false}}'></view>
 <view class='topbar'>
   <view class='status' style="height:{{statusHeight}}px"></view>
   <view class='navbar' style="height:{{navHeight}}px">

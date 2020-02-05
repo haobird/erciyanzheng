@@ -1,7 +1,12 @@
 //app.js
 App({
+  globalData: {
+    share: false,  // 分享默认为false
+    statusHeight: 0,
+    navHeight: 0
+  },
   onLaunch: function () {
-    
+    var self = this;
     if (!wx.cloud) {
       console.error('请使用 2.2.3 或以上的基础库以使用云能力')
     } else {
@@ -14,6 +19,12 @@ App({
         traceUser: true,
       })
     }
-    this.globalData = {}
-  }
+    wx.getSystemInfo({
+      success(res) {
+        var isIos = res.system.indexOf('iOS') > -1;
+        self.globalData.statusHeight = res.statusBarHeight;
+        self.globalData.navHeight = isIos ? 44 : 48;
+      }
+    })
+  },
 })
