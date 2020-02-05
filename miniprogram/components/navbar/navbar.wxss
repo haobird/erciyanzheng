@@ -50,3 +50,45 @@
   white-space: nowrap;
   font-size: 32rpx;
 }
+
+.bac_top{
+  background: #ccc;
+  height: 60px;
+  width: 40%;
+  margin-left: 10px;
+  position: relative;
+}
+
+.bac_top::before{
+  content:"";
+  width:0;
+  height:0;
+  position:absolute;
+  left:7px;
+  top:-20px;
+  border-width:10px;
+  border-style:solid;
+  border-color:transparent transparent #ccc transparent;
+}
+
+.background_bg{
+  margin: 20px 10px;
+  display: block;
+  padding-top: 5px;
+}
+
+.background_bg p{
+  display: block;
+  height: 26px;
+  line-height: 26px;
+  color: #fff;
+  font-size: 14px;
+}
+
+.left_pad{
+  padding-right: 8px;
+}
+
+.background_bg p:first-child{
+  border-bottom: 1px solid #fff;
+}

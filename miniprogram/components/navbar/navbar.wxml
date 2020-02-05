@@ -11,6 +11,13 @@
       <view>二次验证码</view>
     </view>
   </view>
-  <view class='navbar_bar' >jjj</view>
+  <view class='navbar_bar bac_top' >
+    <div class="background_bg">
+        <p>
+          <span class="iconfont icon-add-select left_pad"></span>扫一扫
+        </p>
+        <p><span class="iconfont icon-add-select left_pad"></span>手动添加</p>
+    </div>
+  </view>
 </view>
 
