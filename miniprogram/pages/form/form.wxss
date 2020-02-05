@@ -1,1 +1,36 @@
 /* miniprogram/pages/form.wxss */
+
+.form{
+  width:100%;
+
+}
+
+.form view{
+  width: 80%;
+  margin-left: 10%;
+  border-bottom: 1px solid #1890ff;
+  display: block;
+  font-size: 14px;
+}
+
+.form view input{
+  width: 60%;
+  height: 40px;
+}
+
+.form view span.important{
+  color:red;
+  vertical-align: top;
+}
+
+.form button.but{
+  display: block;
+  width: auto;
+  background: #1890ff;
+  color: #fff;
+  line-height: 24px;
+  text-align: center;
+  font-size: 12px;
+  margin: 20px 20px;
+  font-weight: normal;
+}

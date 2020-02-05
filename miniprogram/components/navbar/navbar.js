@@ -28,6 +28,15 @@ Component({
           })
         }
       }
+    },
+    iconClick() {
+      console.log(4444);
+      wx.navigateTo({
+        url: '../form/form',
+      })
+      // wx.switchTab({
+      //   url: '../form/form',
+      // })
     }
   },
   attached() {

@@ -1,2 +1,10 @@
 <!--miniprogram/pages/form.wxml-->
-<text>miniprogram/pages/form.wxml</text>
+<view class="container" >
+  <form class="form" bindsubmit="formSubmit" bindreset="formReset">
+
+    <view>用户名<input placeholder="请输入账户名" name="name"></input></view>
+    <view>密钥<span class="important">*</span><input placeholder="请输入密钥" name="secret"></input></view>
+    <view>网站名<span class="important">*</span><input placeholder="请输入网站名" name="website"></input></view>
+    <button class="but" formType="submit">添加</button>
+  </form>
+</view>

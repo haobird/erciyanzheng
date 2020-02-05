@@ -45,7 +45,7 @@ Page({
   // 计算当前加密值
   refreshCode : function(list) {
       list.forEach(element => {
-        var key   = element.secret;
+        var key   = escape(element.secret);
         var totp = new TOTP(key);
         var code = totp.genOTP();
         element.sign    = code;

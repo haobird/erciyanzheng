@@ -18,7 +18,7 @@
   position: relative;
 }
 
-.navbar_back {
+.navbar_add {
   padding: 0 32rpx;
   display: flex;
   justify-content: flex-start;
@@ -26,7 +26,7 @@
   height: 100%;
 }
 
-.navbar_back image {
+.navbar_add image {
   width: 21rpx;
   height: 34rpx;
 }
@@ -48,5 +48,5 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  font-size: 38rpx;
+  font-size: 32rpx;
 }

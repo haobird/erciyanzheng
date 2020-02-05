@@ -14,19 +14,12 @@
           <!-- <div ></div> -->
         </p>
     </li>
-  </ul> 
+  </ul>
 
-  <!-- <div class="form">
-    <span>用户名<input placeholder="请输入账户名"></input></span>
-    <span>密钥<input placeholder="请输入密钥"></input></span>
-    <span>网站名<input placeholder="请输入网站名"></input></span>
-    <button class="but">添加</button>
-  </div>  -->
-
-  <div class="footer" >
+  <!-- <div class="footer" >
     <button class="next" class="mini" type="default" bindtap="scan">扫码新增</button>
     <text class="sign">荒烟残照 辗转流光</text>
-  </div>
+  </div> -->
   <!-- 新增 -->
 </view>
 
