@@ -1,0 +1,16 @@
+<!--pages/navbar.wxml-->
+<view style="height:{{statusHeight+navHeight}}px" hidden='{{false}}'></view>
+<view class='topbar'>
+  <view class='status' style="height:{{statusHeight}}px"></view>
+  <view class='navbar' style="height:{{navHeight}}px">
+    <view class='navbar_back' bindtap='backClick'>
+      <view class='iconfont icon-add-select' style="font-size: 24px;"></view>
+      <!-- <image src='../images/black_back.png'></image> -->
+    </view>
+    <view class='navbar_title' style="height:{{navHeight}}px">
+      <view>二次验证码</view>
+    </view>
+  </view>
+  <view class='navbar_bar' >jjj</view>
+</view>
+

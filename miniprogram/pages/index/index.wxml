@@ -1,8 +1,9 @@
 <!--index.wxml-->
 <!-- 以下是对一个自定义组件的引用 -->
 <!-- <component-tag-name inner-text="Some text"></component-tag-name> -->
+<header header='{{header}}'></header>
 <view class="container" >
-  <!--<ul class="list">
+  <ul class="list">
     <li wx:for="{{list}}" wx:key="unique" 
     bindtap="del" data-index='{{index}}'>
       <b>{{item.sign}}</b>
@@ -11,16 +12,16 @@
           <span> {{item.website }}</span>
           <small >{{ length }}</small>
           <!-- <div ></div> -->
-        <!--</p>
+        </p>
     </li>
-  </ul> -->
+  </ul> 
 
-  <div class="form">
+  <!-- <div class="form">
     <span>用户名<input placeholder="请输入账户名"></input></span>
     <span>密钥<input placeholder="请输入密钥"></input></span>
     <span>网站名<input placeholder="请输入网站名"></input></span>
     <button class="but">添加</button>
-  </div> 
+  </div>  -->
 
   <div class="footer" >
     <button class="next" class="mini" type="default" bindtap="scan">扫码新增</button>
