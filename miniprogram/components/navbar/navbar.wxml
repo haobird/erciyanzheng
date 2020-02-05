@@ -13,10 +13,8 @@
   </view>
   <view class='navbar_bar bac_top' >
     <div class="background_bg">
-        <p>
-          <span class="iconfont icon-add-select left_pad"></span>扫一扫
-        </p>
-        <p><span class="iconfont icon-add-select left_pad"></span>手动添加</p>
+        <p><span class="iconfont icon-scanning left_pad"></span>扫一扫</p>
+        <p><span class="iconfont icon-editor left_pad"></span>手动添加</p>
     </div>
   </view>
 </view>

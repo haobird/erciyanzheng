@@ -3,7 +3,16 @@ var TOTP = require('totp.min.js')
 const app = getApp()
 
 Page({
+  
   data: {
+    nvabarData: {      
+      showCapsule: false, //是否显示左上角图标   1表示显示    0表示不显示      
+      showBack: false,  
+      showHome:1,      
+      title: '二次验证码', //导航栏 中间的标题   
+    },
+    showCapsule : false,
+    showForm : false,
     list : [{_id : "1", name : "模拟数据", secret: "666666", website:"test.com", sign: "666778"}],
     openid: "",
     logged: false,
@@ -12,16 +21,20 @@ Page({
     length: "", // 倒计时长度
     num: 0, // 定时器刷新次数
     timer: '',     //存储计时器
-    // 组件所需的参数
-    nvabarData: {
-      showCapsule: 1, //是否显示左上角图标   1表示显示    0表示不显示
-      title: '我的主页', //导航栏 中间的标题
-    },
-
     // 此页面 页面内容距最顶部的距离
     height: app.globalData.height * 2 + 20   
   },
   onLoad: function() {
+    var self = this;
+    wx.getSystemInfo({
+      success(res) {
+        var isIos = res.system.indexOf('iOS') > -1;
+        self.setData({
+          statusHeight: res.statusBarHeight,
+          navHeight: isIos ? 44 : 48
+        })
+      }
+    })
     // var str = "otpauth://totp/handsome@totp.js?issuer=Totp.js&secret=GAXDC4DIG5YWYMTH";
     // this.decon(str);
     // 读取列表
@@ -52,7 +65,54 @@ Page({
       });
       this.setData({ list: list})
   },
-  
+  bindViewTap: function(event){
+    var flag = false;
+    this.showCapsule = flag;
+    this.setData({
+      showCapsule: flag
+    })
+  },
+  editorClick : function() {
+    var flag = true;
+    this.showForm = flag;
+    this.setData({
+      showForm: flag
+    })
+  },
+  backClick : function() {
+    this.showForm = false;
+    this.setData({
+      showForm: false
+    })
+  },
+  iconClick : function() {
+    var flag = this.showCapsule ? false : true;
+    this.showCapsule = flag;
+    this.setData({
+      showCapsule: flag
+    })
+  },
+  formSubmit: function (e) {  
+    console.log('form发生了submit事件，携带数据为：', e.detail.value);  
+    let { name, secret,website } = e.detail.value;  
+    if (!secret || !website) {  
+      wx.showToast({
+        icon: 'none',
+        title: '必填信息不能为空',
+      })
+      return;  
+    }  
+    var obj = {
+      name: name,
+      website: website,
+      secret : secret,
+    };
+    this.addItem(obj);
+    // wx.navigateBack({
+    //   delta: 1
+    // })
+    this.backClick();
+  }, 
   // 获取用户的存储列表
   getList: function(){
     const db = wx.cloud.database()
@@ -72,7 +132,7 @@ Page({
     })
   },
   // 扫码
-  scan: function() {
+  scanClick: function() {
     var that = this;
     wx.scanCode({
       // onlyFromCamera: true,
@@ -81,7 +141,6 @@ Page({
         var str = res.result;
         var obj = that.decon(str);
         if (obj) { that.addItem(obj); }
-        
       }
     })
   },

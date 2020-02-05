@@ -1,5 +1,6 @@
 /* pages/navbar.wxss */
-@import "../../style/iconfont.wxss"
+@import "../../style/iconfont.wxss";
+
 .topbar {
   position: fixed;
   left: 0;

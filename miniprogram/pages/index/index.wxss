@@ -1,4 +1,102 @@
 /**index.wxss**/
+@import "../../style/iconfont.wxss";
+
+.topbar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+}
+.status {
+  width: 100%;
+}
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+}
+
+.navbar_add {
+  padding: 0 32rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+}
+
+.navbar_add image {
+  width: 21rpx;
+  height: 34rpx;
+}
+
+.navbar_title {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: -1;
+}
+.navbar_title view {
+  width: 40%;
+  word-break: break-all;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 32rpx;
+}
+
+.bac_top{
+  background: #5b5b5e;
+  height: 80px;
+  width: 40%;
+  margin-left: 10px;
+  position: relative;
+ 
+}
+
+.bac_top::before{
+  content:"";
+  width:0;
+  height:0;
+  position:absolute;
+  left:7px;
+  top:-20px;
+  border-width:10px;
+  border-style:solid;
+  border-color:transparent transparent #5b5b5e transparent;
+}
+
+.background_bg{
+  margin: 10px;
+  display: block;
+  padding-top: 1px;
+}
+
+.background_bg p{
+  display: block;
+  height: 30px;
+  line-height: 30px;
+  color: #fff;
+  font-size: 18px;
+  margin-top: 5px;
+}
+
+.left_pad{
+  padding-right: 8px;
+  font-size: 20px!important;
+}
+
+.background_bg p:first-child{
+  border-bottom: 1px solid #fff;
+  padding-bottom: 1px;
+}
 
 .container{
   display: flex;
@@ -44,6 +142,41 @@
   margin-right:20px;
   color:#8AA5BB;
   font-family: Open Sans, "Helvetica Neue", Helvetica, Tahoma, Arial, "PingFang SC", "Microsoft YaHei";
+}
+
+
+.form{
+  width:100%;
+}
+
+.form view{
+  width: 80%;
+  margin-left: 10%;
+  border-bottom: 1px solid #1890ff;
+  display: block;
+  font-size: 14px;
+}
+
+.form view input{
+  width: 60%;
+  height: 40px;
+}
+
+.form view span.important{
+  color:red;
+  vertical-align: top;
+}
+
+.form button.but{
+  display: block;
+  width: auto;
+  background: #1890ff;
+  color: #fff;
+  line-height: 24px;
+  text-align: center;
+  font-size: 12px;
+  margin: 20px 20px;
+  font-weight: normal;
 }
 
 .footer{

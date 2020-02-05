@@ -1,26 +1,57 @@
 <!--index.wxml-->
-<!-- 以下是对一个自定义组件的引用 -->
-<!-- <component-tag-name inner-text="Some text"></component-tag-name> -->
-<header header='{{header}}'></header>
-<view class="container" >
-  <ul class="list">
-    <li wx:for="{{list}}" wx:key="unique" 
-    bindtap="del" data-index='{{index}}'>
-      <b>{{item.sign}}</b>
-        <p>
-          <span>{{item.name}}</span>
-          <span> {{item.website }}</span>
-          <small >{{ length }}</small>
-          <!-- <div ></div> -->
-        </p>
-    </li>
-  </ul>
+<!-- <header header='{{header}}'></header> -->
+<view class="html" bindtap="bindViewTap">
+<view style="height:{{statusHeight+navHeight}}px" hidden='{{false}}'></view>
+<view class='topbar'>
+  <view class='status' style="height:{{statusHeight}}px"></view>
+  <view class='navbar' style="height:{{navHeight}}px">
+    <view class='navbar_add' wx:if="{{showForm}}">
+      <view class='iconfont icon-arrow-lift' bindtap='backClick' style="font-size: 24px;"></view>
+    </view>
+    <view class='navbar_add' catchtap='iconClick' wx:else >
+      <view class='iconfont icon-add-select' style="font-size: 24px;"></view>
+    </view>
+    <view class='navbar_title' style="height:{{navHeight}}px">
+      <text>二次验证码</text>
+    </view>
+  </view>
+  <view class='navbar_bar bac_top' hidden="{{ !showCapsule }}" >
+    <div class="background_bg">
+        <p bindtap='scanClick'><span class="iconfont icon-scanning left_pad"  ></span>扫一扫</p>
+        <p bindtap='editorClick' ><span class="iconfont icon-editor left_pad" ></span>手动添加</p>
+    </div>
+  </view>
+</view>
 
+<view class="container" >
+  <view wx:if="{{ showForm }}"> 
+    <form class="form" bindsubmit="formSubmit" bindreset="formReset">
+      <view>用户名<input placeholder="请输入账户名" name="name"></input></view>
+      <view>密钥<span class="important">*</span><input placeholder="请输入密钥" name="secret"></input></view>
+      <view>网站名<span class="important">*</span><input placeholder="请输入网站名" name="website"></input></view>
+      <button class="but" formType="submit">添加</button>
+    </form>
+  </view>
+  <view wx:else> 
+    <ul class="list" >
+      <li wx:for="{{list}}" wx:key="unique" 
+      bindtap="del" data-index='{{index}}'>
+        <b>{{item.sign}}</b>
+          <p>
+            <span>{{item.name}}</span>
+            <span> {{item.website }}</span>
+            <small >{{ length }}</small>
+            <!-- <div ></div> -->
+          </p>
+      </li>
+    </ul>
+  </view>
   <!-- <div class="footer" >
     <button class="next" class="mini" type="default" bindtap="scan">扫码新增</button>
     <text class="sign">荒烟残照 辗转流光</text>
   </div> -->
   <!-- 新增 -->
+</view>
 </view>
 
 
